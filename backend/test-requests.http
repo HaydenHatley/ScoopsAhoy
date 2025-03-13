@@ -1,0 +1,70 @@
+### CREATE five documents.
+POST http://localhost:3000/customers HTTP/1.1
+content-type: application/json
+
+{
+    "customerID": "5",
+    "name": "Mr Test",
+    "phone": "555-555-5555",
+    "email": "test@test.com",
+    "dateOfBirth": "2001-08-08"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/customers HTTP/1.1
+content-type: application/json
+
+{
+    "customerID": "10",
+    "name": "Mrs Test",
+    "phone": "444-444-4444",
+    "email": "customer@test.com",
+    "dateOfBirth": "2007-08-08"
+}
+
+### CREATE 3
+POST http://localhost:3000/customers HTTP/1.1
+content-type: application/json
+
+{
+    "customerID": "7",
+    "name": "Garret",
+    "phone": "666-666-6666",
+    "email": "garret@test.com",
+    "dateOfBirth": "1995-07-08"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/customers HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/customers/67c3d9a6a34ce1fc1eb1b06c HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/customers/67c3d9a6a34ce1fc1eb1b06c HTTP/1.1
+content-type: application/json
+
+{
+    "customerID": "13",
+    "name": "James",
+    "phone": "999-999-9999",
+    "email": "james@test.com",
+    "dateOfBirth": "1975-09-10"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/customers/67c3d9a6a34ce1fc1eb1b06c HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/customers HTTP/1.1
+
